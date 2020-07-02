@@ -1,0 +1,1280 @@
+@font-face {
+	font-family: "Port McKenzie";
+	font-style: normal;
+	font-weight: normal;
+	src: url(fonts/SFPortMcKenzie-Regular.woff2) format("woff2");
+}
+
+@font-face {
+	font-family: "Port McKenzie Outline";
+	font-style: normal;
+	font-weight: normal;
+	src: url(fonts/SFPortMcKenzieOutline-Regular.woff2) format("woff2");
+}
+
+@font-face {
+	font-family: Mohave;
+	font-style: normal;
+	font-weight: normal;
+	src: url(fonts/Mohave-Regular.woff2) format("woff2");
+}
+
+@font-face {
+	font-family: Mohave;
+	font-style: normal;
+	font-weight: bold;
+	src: url(fonts/Mohave-Bold.woff2) format("woff2");
+}
+
+@font-face {
+	font-family: Mohave;
+	font-style: italic;
+	font-weight: normal;
+	src: url(fonts/Mohave-Italic.woff2) format("woff2");
+}
+
+
+@font-face {
+	font-family: Mohave;
+	font-style: italic;
+	font-weight: bold;
+	src: url(fonts/Mohave-BoldItalic.woff2) format("woff2");
+}
+
+a {
+	background: none;
+	color: #0080c0;
+	font-weight: bold;
+}
+
+a, button:hover {
+	cursor: pointer;
+}
+
+a#link, button span {
+	display: none;
+}
+
+a:hover, a:active {
+	background: none;
+	color: #00c0ff;
+	transition: 0.5s color;
+}
+
+body {
+	background: rgba(0, 0, 0, 0.25);
+	color: inherit;
+	margin: 0 25% 0 0;
+	padding: 0;
+}
+
+body, noscript {
+	text-align: center;
+}
+
+button {
+	background: none;
+	border: 0;
+	border-radius: 0.25em;
+	color: inherit;
+}
+
+button, input, select {
+	font-family: inherit;
+	font-size: inherit;
+	text-align: center;
+}
+
+button#blue {
+	background-image: url(../images/timestone-blue.png);
+}
+
+button#cd {
+	background-image: url(../images/sprite-sonic.png);
+	background-size: 40px 38px;
+}
+
+button#cd.active {
+	background-image: url(../images/sprite-sonic-animated.png);
+	box-shadow: 0 0 2px 2px #c0c0ff;
+}
+
+button#cdjp {
+	background-image: url(../images/disc-cdjp.png);
+}
+
+button#cdus {
+	background-image: url(../images/disc-cdus.png);
+}
+
+button#collisionChaos.bad {
+	background-image: url(../images/flower-02.png);
+}
+
+button#collisionChaos.good {
+	background-image: url(../images/flower-02-animated.png);
+}
+
+button#cyan {
+	background-image: url(../images/timestone-cyan.png);
+}
+
+button#genesis {
+	background-image: url(../images/spindash-genesis.png);
+	background-position: 0.5em 50%;
+	background-size: 56px 27px;
+}
+
+button#genesis.active {
+	background-image: url(../images/spindash-genesis-animated.png);
+}
+
+button#green {
+	background-image: url(../images/timestone-green.png);
+}
+
+button#knuckles {
+	background-image: url(../images/icon-knuckles.png);
+	width: 36px;
+}
+
+button#locked {
+	background-image: url(../images/tails-tired.png);
+}
+
+button#locked.active {
+	animation: float 3s linear infinite;
+	background-image: url(../images/tails-tired-animated.png);
+}
+
+button#metallicMadness.bad {
+	background-image: url(../images/flower-07.png);
+}
+
+button#metallicMadness.good {
+	background-image: url(../images/flower-07-animated.png);
+}
+
+button#orange {
+	background-image: url(../images/timestone-orange.png);
+}
+
+button#original {
+	background-image: url(../images/spindash-original.png);
+	background-position: 1.25em 50%;
+	background-size: 30px 30px;
+}
+
+button#original.active {
+	background-image: url(../images/spindash-original-animated.png);
+}
+
+button#palmtreePanic.bad {
+	background-image: url(../images/flower-01.png);
+}
+
+button#palmtreePanic.good {
+	background-image: url(../images/flower-01-animated.png);
+}
+
+button#pc {
+	background-image: url(../images/sprite-amyrose.png);
+	background-size: 32px 40px;
+}
+
+button#pc.active {
+	background-image: url(../images/sprite-amyrose-animated.png);
+	box-shadow: 0 0 2px 2px #ffc0ff;
+}
+
+button#purple {
+	background-image: url(../images/timestone-purple.png);
+}
+
+button#quartzQuadrant.bad {
+	background-image: url(../images/flower-04.png);
+}
+
+button#quartzQuadrant.good {
+	background-image: url(../images/flower-04-animated.png);
+}
+
+button#red {
+	background-image: url(../images/timestone-red.png);
+}
+
+button#retro {
+	background-image: url(../images/sprite-tails.png);
+	background-size: 50px 32px;
+}
+
+button#retro.active {
+	background-image: url(../images/sprite-tails-animated.png);
+	box-shadow: 0 0 2px 2px #ffc0c0;
+}
+
+button#sonic {
+	background-image: url(../images/icon-sonic.png);
+}
+
+button#stardustSpeedway.bad {
+	background-image: url(../images/flower-06.png);
+}
+
+button#stardustSpeedway.good {
+	background-image: url(../images/flower-06-animated.png);
+}
+
+button#tails {
+	background-image: url(../images/icon-tails.png);
+}
+
+button#tidalTempest.bad {
+	background-image: url(../images/flower-03.png);
+}
+
+button#tidalTempest.good {
+	background-image: url(../images/flower-03-animated.png);
+}
+
+button#unlocked {
+	background-image: url(../images/tails-flying.png);
+}
+
+button#unlocked.active {
+	animation: float 1.5s linear infinite;
+	background-image: url(../images/tails-flying-animated.png);
+}
+
+button#yellow {
+	background-image: url(../images/timestone-yellow.png);
+}
+
+button#wackyWorkbench.bad {
+	background-image: url(../images/flower-05.png);
+}
+
+button#wackyWorkbench.good {
+	background-image: url(../images/flower-05-animated.png);
+}
+
+button.active, input[type="date"]:focus, input[type="number"]:focus,
+input[type="text"]:focus, input[type="time"]:focus, select:hover {
+	box-shadow: 0 0 2px 2px #fff;
+}
+
+button.character, button.timeStone {
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-size: 32px 32px;
+	color: inherit;
+	filter: brightness(0) invert(67%);
+	height: 32px;
+	padding: 2em;
+	width: 32px;
+}
+
+button.character.selected, button.timeStone.collected {
+	filter: none;
+}
+
+button.close img {
+	height: 32px;
+	width: 32px;
+}
+
+button.future {
+	background-size: 48px 96px;
+	color: inherit;
+	margin: 0.1em;
+	padding: 0;
+	height: 96px;
+	transition: 0.5s all;
+	width: 48px;
+}
+
+button.future.bad {
+	filter: grayscale(1);
+}
+
+button.machine {
+	border: 1px solid #fff;
+	border-radius: 0.1em;
+	height: 1.25em;
+	width: 1.25em;
+}
+
+button.machine.destroyed {
+	animation: pop 0.1s ease-in;
+	background-image: url(checkmark.svg);
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-size: 0.75em 0.75em;
+}
+
+button.platform {
+	background-position: 0.75em 50%;
+	background-repeat: no-repeat;
+	margin: 0.25em;
+	padding: 1em 0 1em 2em;
+	width: 8em;
+}
+
+button.soundtrack {
+	background-position: 0.25em 50%;
+	background-size: 4em 4em;
+}
+
+button.soundtrack, button.spinDash, button.tails {
+	background-repeat: no-repeat;
+	margin: 0.25em;
+	padding: 1.5em 0 1.5em 4em;
+	width: 8em;
+}
+
+button.spinDash {
+	font-style: italic;
+}
+
+button.tails {
+	background-position: 1em 50%;
+	background-size: 38px 32px;
+}
+
+button.timeStone, button.character.selected, button.timeStone.collected {
+	transition: 0.5s filter;
+}
+
+button[disabled] {
+	cursor: default;
+}
+
+button[disabled], input[disabled], label.disabled, select[disabled] {
+	border: 0;
+	opacity: 0.25;
+	transition: 0.5s opacity;
+}
+
+div#col {
+	font-weight: bold;
+}
+
+div#col, div#hex {
+	border-right: 1px solid #fff;
+}
+
+div#error {
+	width: 24em;
+}
+
+div#error p {
+	margin: 2em 4em;
+}
+
+div#flickies {
+	animation-delay: 0s;
+	animation-duration: 180s;
+	animation-iteration-count: infinite;
+	animation-name: flyacross;
+	animation-timing-function: linear;
+	height: 64px;
+	left: -64px;
+	position: fixed;
+	top: 25%;
+	width: 64px;
+	z-index: -3;
+}
+
+div#flickies img {
+	height: 32px;
+	width: 32px;
+}
+
+div#flicky0, div#flicky1, div#flicky2 {
+	position: absolute;
+}
+
+div#flicky1 {
+	left: 32px;
+	top: 32px;
+}
+
+div#flicky2 {
+	top: 64px;
+}
+
+div#hexview {
+	max-height: 80%;
+	overflow: auto;
+}
+
+div#hexview>div {
+	display: flex;
+	padding: 1em;
+	text-align: left;
+}
+
+div#hexview>div div {
+	font-family: "Lucida Console", "Courier New", monospace;
+	padding: 0 1em;
+	white-space: pre;
+}
+
+div#littlePlanet {
+	left: 100%;
+	position: fixed;
+	top: 50%;
+	transform: translate(-100%, -50%);
+	z-index: -4;
+}
+
+div#littlePlanet img {
+	animation: rotate 60s linear infinite;
+	height: 480px;
+	width: 480px;
+}
+
+div#metalSonic img {
+	animation-delay: 30s;
+	animation-duration: 60s;
+	animation-iteration-count: infinite;
+	animation-name: oscillate;
+	animation-timing-function: linear;
+	bottom: 50%;
+	height: 96px;
+	left: -96px;
+	position: fixed;
+	width: 96px;
+	z-index: -2;
+}
+
+div#platform {
+	margin: 1em;
+}
+
+div#robotnik img {
+	animation-delay: 60s;
+	animation-duration: 45s;
+	animation-iteration-count: infinite;
+	animation-name: move;
+	animation-timing-function: linear;
+	height: 80px;
+	left: 100%;
+	position: fixed;
+	top: 100%;
+	width: 96px;
+	z-index: -2;
+}
+
+div#section_character {
+	grid-area: character;
+}
+
+div#section_goodFutures {
+	grid-area: goodFutures;
+}
+
+div#section_goodFutures, div#section_timeStones, h1, h2, h3 {
+	white-space: nowrap;
+}
+
+div#section_holograms {
+	grid-area: holograms;
+}
+
+div#section_holograms, div#section_lives, div#section_score {
+	font-size: 1.5rem;
+}
+
+div#section_initials {
+	grid-area: initials;
+}
+
+div#section_initials, div#section_totalTime {
+	font-size: 2rem;
+}
+
+div#section_lives {
+	grid-area: lives;
+}
+
+div#section_machines {
+	grid-area: machines;
+}
+
+div#section_mobile {
+	grid-area: mobile;
+}
+
+div#section_score {
+	grid-area: score;
+}
+
+div#section_stage {
+	grid-area: stage;
+}
+
+div#section_specialStage {
+	grid-area: specialStage;
+}
+
+div#section_spinDash {
+	grid-area: spinDash;
+}
+
+div#section_tails {
+	grid-area: tails;
+}
+
+div#section_times {
+	grid-area: times;
+}
+
+div#section_timeStones {
+	grid-area: timeStones;
+}
+
+div#section_totalTime {
+	grid-area: totalTime;
+}
+
+div#section_unlocked {
+	grid-area: unlocked;
+}
+
+div#section_videoFilter {
+	grid-area: videoFilter;
+}
+
+div#shootingStar img {
+	animation-delay: 240s;
+}
+
+div#shootingStar img, div#ufo img {
+	animation-duration: 45s;
+	animation-iteration-count: infinite;
+	animation-name: bounce;
+	animation-timing-function: linear;
+	height: 48px;
+	left: -48px;
+	position: fixed;
+	top: 10%;
+	width: 48px;
+	z-index: -3;
+}
+
+div#tornado img {
+	animation-delay: 20s;
+	animation-duration: 60s;
+	animation-iteration-count: infinite;
+	animation-name: flyby;
+	animation-timing-function: linear;
+	bottom: 0;
+	height: 64px;
+	left: -96px;
+	position: fixed;
+	width: 96px;
+	z-index: -1;
+}
+
+div#ufo img {
+	animation-delay: 120s;
+}
+
+div.overlay {
+	background: rgba(0, 0, 0, 0.75);
+	border-radius: 0.5em;
+	color: inherit;
+	left: 50%;
+	opacity: 0;
+	position: fixed;
+	text-align: center;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	visibility: hidden;
+	z-index: 2;
+}
+
+div.overlay.open {
+	opacity: 1;
+	transition: 0.5s opacity;
+	visibility: visible;
+}
+
+div.slots {
+	background: rgba(0, 0, 0, 0.25);
+	border-radius: 0.5em;
+	color: inherit;
+	margin: 1em auto;
+	grid-area: slots;
+	padding: 1em;
+	text-align: center;
+	width: 20em;
+}
+
+footer {
+	font-size: 0.75rem;
+	padding: 1em;
+}
+
+h1 {
+	background: linear-gradient(#fff 30%, #00c0ff 50%, #0080c0 100%);
+	color: inherit;
+	font-family: "Port McKenzie Outline", sans-serif;
+	font-size: 3rem;
+	font-weight: normal;
+	margin: 0;
+	padding: 1em;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+h2, h3, span.title {
+	font-family: "Port McKenzie", sans-serif;
+	font-weight: normal;
+}
+
+h2 {
+	background: linear-gradient(#ffc000 30%, #ff8040 50%, #f00 100%);
+	color: inherit;
+	font-size: 2.5rem;
+	text-transform: uppercase;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+h2, h3 {
+	margin: 0.5em;
+	padding: 0.5em;
+}
+
+h3 {
+	background: linear-gradient(#fff 30%, #c080c0 50%, #f0f 100%);
+	font-size: 2rem;
+	color: inherit;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+html {
+	background-attachment: fixed;
+	background-color: #000;
+	background-position: 0 100%;
+	background-size: cover;
+	color: #fff;
+	font: 12pt/150% Mohave, Helvetica, sans-serif;
+	image-rendering: crisp-edges;
+	image-rendering: pixelated;
+	overflow-x: hidden;
+	padding: 0;
+}
+
+html.cd footer, html.pc footer, html.cd section#save,
+html.pc section#save, html.pc section#timeAttack, section#options {
+	background-color: rgba(0, 0, 0, 0.75);
+}
+
+html.pc footer, html.pc section#save,
+html.retro footer, html.retro section#save {
+	background-color: #000;
+}
+
+html.pc section#slots, section#singlePlayer {
+	background-color: rgba(0, 0, 0, 0.25);
+	background-image: url(zigzag-33.png);
+}
+
+html.pc section#singlePlayer, section#timeAttack {
+	background-color: rgba(0, 0, 0, 0.5);
+	background-image: url(zigzag-50.png);
+}
+
+html.pc section#timeAttack, html.retro section#timeAttack {
+	grid-template-areas:
+		"heading   heading"
+		"slots     slots"
+		"totalTime unlocked"
+		"times     times";
+	grid-template-columns: 50% 50%;
+}
+
+html.pc section#timeAttack, section#options {
+	background-image: url(zigzag-100.png);
+}
+
+html.retro section#options {
+	display: grid;
+	grid-gap: 0 0;
+	grid-template-areas:
+		"heading     heading     heading"
+		"mobile      mobile      mobile"
+		"soundtrack  spinDash    tails"
+		"videoFilter musicVolume soundVolume";
+	grid-template-columns: 33% 34% 33%;
+	grid-template-rows: auto;
+}
+
+html.retro section#singlePlayer {
+	grid-template-areas:
+		"heading   heading  heading   heading      heading      heading"
+		"slots     slots    slots     slots        slots        slots"
+		"character lives    lives     lives        lives        score"
+		"stage     stage    stage     specialStage specialStage specialStage"
+		"machines  machines holograms holograms    timeStones   timeStones";
+	grid-template-columns: 33% 5% 12% 12% 5% 33%;
+	grid-template-rows: auto;
+}
+
+img#eggman {
+	height: 86px;
+	left: calc(12em - 74px);
+	position: absolute;
+	top: -80px;
+	width: 148px;
+}
+
+img#specialStage, img#stage {
+	border-radius: 0.5em;
+	height: 250px;
+}
+
+img#specialStage, img#stage, input#level {
+	width: 300px;
+}
+
+img.flower {
+	height: 48px;
+	width: 24px;
+}
+
+input#currentLevel {
+	width: 450px;
+}
+
+input#holograms, input#lives, input.initials {
+	width: 3em;
+}
+
+input#name, input[type="date"], input[type="time"] {
+	width: 8em;
+}
+
+input#score {
+	width: 6em;
+}
+
+input#timeStones {
+	width: 330px;
+}
+
+input[type="number"] {
+	width: 4em;
+}
+
+input[type="date"], input[type="number"], input[type="text"],
+input[type="time"], select {
+	background: transparent;
+	border: 1px solid #c0c0c0;
+	border-radius: 0.25em;
+	color: inherit;
+	padding: 0.25em;
+}
+
+input[type="range"] {
+	background: transparent;
+	color: #fff;
+	-webkit-appearance: none;
+}
+
+input[type="range"]:focus {
+	outline: 0;
+}
+
+input[type="range"]::-moz-range-thumb {
+	background: #c0c0c0 linear-gradient(#c0c0c0, #fff);
+	border-color: #fff #c0c0c0 #c0c0c0 #fff;
+	border-radius: 0.25em;
+	border-width: 1px;
+	height: 2.5em;
+	width: 1em;
+}
+
+input[type="range"]::-moz-range-track {
+	background: #808080 linear-gradient(#404040, #808080);
+	border-radius: 0.25em;
+	height: 0.5em;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+	background: #808080 linear-gradient(#404040, #808080);
+	border-radius: 0.25em;
+	height: 0.5em;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+	background: #c0c0c0 linear-gradient(#c0c0c0, #fff);
+	border-color: #fff #c0c0c0 #c0c0c0 #fff;
+	border-radius: 0.25em;
+	border-style: solid;
+	border-width: 1px;
+	height: 2.5em;
+	margin-top: -1em;
+	width: 1em;
+	-webkit-appearance: none;
+}
+
+input[type="text"] {
+	text-transform: uppercase;
+}
+
+label {
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+}
+
+label, th {
+	font-weight: bold;
+}
+
+option {
+	background: initial;
+	color: initial;
+}
+
+option[disabled] {
+	background: initial;
+	color: GrayText;
+}
+
+section {
+	background-position: 100% 100%;
+	background-repeat: repeat-x;
+	background-size: 64px 32px;
+	color: inherit;
+	padding: 1em 1em 64px;
+}
+
+section#load {
+	background-image: url(zigzag-25.png);
+}
+
+section#load button, section#options button, section#save button {
+	background-color: rgba(255, 255, 255, 0.25);
+	color: inherit;
+}
+
+section#load button:hover, section#save button:hover {
+	background-color: #fff;
+	color: #000;
+}
+
+section#options h2, section#singlePlayer h2, section#timeAttack h2 {
+	grid-area: heading;
+}
+
+section#options input[type="range"] {
+	width: 200px;
+}
+
+section#save {
+	padding: 1em;
+}
+
+section#save button {
+	margin: 2.5em 0.5em;
+	padding: 0.5em;
+	text-transform: uppercase;
+	width: 8em;
+}
+
+section#singlePlayer {
+	display: grid;
+	grid-gap: 0 0;
+	grid-template-areas:
+		"heading     heading"
+		"slots       slots"
+		"stage       specialStage"
+		"goodFutures timeStones";
+	grid-template-columns: 50% 50%;
+	grid-template-rows: auto;
+}
+
+section#timeAttack {
+	display: grid;
+	grid-gap: 0 0;
+	grid-template-areas:
+		"heading   heading  heading"
+		"slots     slots    slots"
+		"totalTime unlocked initials"
+		"times     times    times";
+	grid-template-columns: 33% 34% 33%;
+	grid-template-rows: auto;
+}
+
+section#timeAttack table {
+	font-size: 1.5rem;
+}
+
+select {
+	background-image: url(select.svg);
+	background-position: 100% 50%;
+	background-repeat: no-repeat;
+	padding-right: 2em;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+}
+
+span.title {
+	background: linear-gradient(#fff 30%, #c0c000 50%, #ff0 100%);
+	color: inherit;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+table {
+	border-collapse: collapse;
+	margin: auto;
+	padding: 0;
+	vertical-align: middle;
+}
+
+table input.initials {
+	margin-left: 1em;
+}
+
+td, th {
+	padding: 0.25em 0.5em;
+	white-space: nowrap;
+}
+
+th {
+	text-align: right;
+}
+
+@media (max-width: 1920px) {
+	div#littlePlanet {
+		transform: translate(-50%, -50%);
+	}
+}
+
+@media (max-width: 1024px) {
+	html.retro section#options, section#singlePlayer, section#timeAttack {
+		display: block;
+	}
+}
+
+@media (max-width: 768px) {
+	body {
+		margin-right: 0;
+	}
+
+	div#littlePlanet img {
+		animation: none;
+		display: none;
+	}
+}
+
+@media (prefers-reduced-motion) {
+	button#locked, button#unlocked, div#flickies, div#littlePlanet img,
+	div#metalSonic img, div#robotnik img, div#shootingStar img, div#tornado img,
+	div#ufo img {
+		animation: none;
+	}
+}
+
+@keyframes bounce {
+	0% {
+		left: -48px;
+		top: 10%;
+	}
+
+	10% {
+		left: 50%;
+		top: 100%;
+	}
+
+	20% {
+		left: 100%;
+		top: 40%;
+	}
+
+	30% {
+		left: 100%;
+		top: 40%;
+		visibility: hidden;
+	}
+
+	99% {
+		left: -48px;
+		top: 10%;
+		visibility: hidden;
+	}
+
+	100% {
+		left: -48px;
+		top: 10%;
+		visibility: visible;
+	}
+}
+
+@keyframes flyacross {
+	0% {
+		left: -64px;
+		top: 25%;
+	}
+
+	10% {
+		left: 100%;
+		top: 15%;
+		transform: unset;
+	}
+
+	30% {
+		transform: scaleX(-1);
+	}
+
+	50% {
+		left: 100%;
+		top: 85%;
+	}
+
+	60% {
+		left: -64px;
+		top: 75%;
+		transform: scaleX(-1);
+	}
+
+	70% {
+		transform: unset;
+	}
+}
+
+@keyframes flyby {
+	0% {
+		left: -96px;
+		bottom: 0;
+	}
+
+	20% {
+		left: 100%;
+		bottom: 67%;
+		transform: unset;
+	}
+
+	40% {
+		transform: scaleX(-1);
+	}
+
+	60% {
+		left: 100%;
+		bottom: 33%;
+	}
+
+	80% {
+		left: -96px;
+		bottom: 100%;
+		transform: scaleX(-1);
+	}
+
+	100% {
+		transform: unset;
+	}
+}
+
+@keyframes move {
+	0% {
+		left: 100%;
+		top: 100%;
+	}
+
+	10% {
+		left: 50%;
+		top: 75%;
+	}
+
+	15% {
+		left: 50%;
+		top: 75%;
+	}
+
+	20% {
+		left: -96px;
+		top: 100%;
+		transform: unset;
+	}
+
+	40% {
+		transform: scaleX(-1);
+	}
+
+	45% {
+		left: -96px;
+		top: 0;
+	}
+
+	50% {
+		left: 50%;
+		top: 25%;
+	}
+
+	55% {
+		left: 50%;
+		top: 25%;
+	}
+
+	60% {
+		left: 100%;
+		top: 0;
+		transform: scaleX(-1);
+	}
+
+	65% {
+		transform: unset;
+	}
+}
+
+@keyframes oscillate {
+	0% {
+		bottom: 50%;
+		left: -96px;
+	}
+
+	4% {
+		bottom: 45%;
+	}
+
+	8% {
+		bottom: 50%;
+	}
+
+	12% {
+		bottom: 45%;
+	}
+
+	16% {
+		bottom: 50%;
+	}
+
+	20% {
+		bottom: 45%;
+	}
+
+	24% {
+		bottom: 50%;
+	}
+
+	28% {
+		bottom: 45%;
+	}
+
+	32% {
+		bottom: 50%;
+		left: 80%;
+	}
+
+	36% {
+		bottom: 50%;
+		left: 80%;
+	}
+
+	40% {
+		bottom: 45%;
+		left: 100%;
+		transform: unset;
+	}
+
+	52% {
+		bottom: 45%;
+		left: 100%;
+		transform: scaleX(-1);
+	}
+
+	56% {
+		bottom: 45%;
+	}
+
+	60% {
+		bottom: 50%;
+		left: 80%;
+	}
+
+	64% {
+		bottom: 50%;
+		left: 80%;
+	}
+
+	68% {
+		bottom: 45%;
+	}
+
+	72% {
+		bottom: 50%;
+	}
+
+	76% {
+		bottom: 45%;
+	}
+
+	80% {
+		bottom: 50%;
+	}
+
+	84% {
+		bottom: 45%;
+	}
+
+	88% {
+		bottom: 50%;
+	}
+
+	92% {
+		bottom: 45%;
+	}
+
+	96% {
+		bottom: 50%;
+		left: -96px;
+		transform: scaleX(-1);
+	}
+
+	100% {
+		bottom: 50%;
+		left: -96px;
+		transform: unset;
+	}
+}
+
+@keyframes rotate {
+	from {
+		transform: rotate(0);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes float {
+	100% {
+		background-position: 1em 50%;
+	}
+
+	50% {
+		background-position: 1em calc(50% + 3px);
+	}
+}
+
+@keyframes pop {
+	0% {
+		background-size: 0.5em 0.5em;
+	}
+
+	50% {
+		background-size: 1em 1em;
+	}
+
+	100% {
+		background-size: 0.75em 0.75em;
+	}
+}

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>Sonic CD Save Editor</title>
+<meta charset="utf-8">
+<meta name="title" content="Sonic CD Save Editor">
+<meta name="description" content="Edits save files for Sonic CD.">
+<link href="mailto:jcfields@jcfields.dev" rel="author" title="J.C. Fields">
+<link href="layout/style.css" media="screen" rel="stylesheet" type="text/css">
+<link href="layout/favicon.png" rel="shortcut icon" type="image/png">
+<link href="layout/homeicon.png" rel="apple-touch-icon-precomposed" type="image/png">
+<script src="saveedit.js" type="text/javascript"></script></head>
+<body><header><h1><span class="title">Sonic CD</span> Save Editor</h1></header>
+<main><noscript><p>Must have JavaScript enabled.</p></noscript>
+<div id="littlePlanet" class="garden"><img src="images/planet-present.png" alt="[Little Planet]"></div>
+<div id="metalSonic" class="garden"><img src="images/character-metalsonic.png" alt="[Metal Sonic]"></div>
+<div id="tornado" class="garden"><img src="images/character-tornado.png" alt="[Tornado]"></div>
+<div id="robotnik" class="garden"><img src="images/character-robotnik.png" alt="[Dr. Robotnik]"></div>
+<div id="flickies" class="garden">
+	<div id="flicky0"><img src="images/character-flicky.png" alt="[Flicky]"></div>
+	<div id="flicky1"><img src="images/character-flicky.png" alt="[Flicky]"></div>
+	<div id="flicky2"><img src="images/character-flicky.png" alt="[Flicky]"></div>
+</div>
+<div id="shootingStar" class="garden"><img src="images/character-shootingstar.png" alt="[Shooting Star]"></div>
+<div id="ufo" class="garden"><img src="images/character-ufo.png" alt="[UFO]"></div>
+<section id="load"><h2>Load Game</h2>
+<div id="open">
+	<label>Open file: <input type="file" id="file" accept=".brm, .crm, .dat, .bin"></label>
+</div>
+<div id="platform">
+	<button type="button" value="0" title="Console" id="cd" class="platform active">Console</button>
+	<button type="button" value="1" title="PC" id="pc" class="platform">PC</button>
+	<button type="button" value="2" title="Retro" id="retro" class="platform">Retro</button>
+</div></section>
+<section id="slots" class="pc"><h2>Save Slots</h2>
+<div class="slots"><label>Save slot: <select id="slot0">
+	<option value="0">Saved Game 1</option>
+	<option value="1">Saved Game 2</option>
+	<option value="2">Saved Game 3</option>
+	<option value="3">Saved Game 4</option>
+	<option value="4">Saved Game 5</option>
+	<option value="5">Saved Game 6</option>
+</select></label></div>
+<table>
+	<tr>
+		<th><label for="name">Save name:</label></th>
+		<td><input type="text" maxlength="12" value="SONICCD____" id="name"></td>
+	</tr>
+	<tr>
+		<th><label for="date">Date/time:</label></th>
+		<td><input type="date" id="date">&nbsp;<input type="time" id="time"></td>
+	</tr>
+</table></section>
+<section id="singlePlayer"><h2>Single-Player</h2>
+<div class="slots"><label>Save slot: <select id="slot1">
+	<option value="0">Saved Game 1</option>
+	<option value="1">Saved Game 2</option>
+	<option value="2">Saved Game 3</option>
+	<option value="3">Saved Game 4</option>
+	<option value="4">Saved Game 5</option>
+	<option value="5">Saved Game 6</option>
+</select></label></div>
+<div id="section_character" class="retro"><h3>Character</h3>
+	<p><button type="button" value="0" title="Sonic" id="sonic" class="character selected"><span>Sonic</span></button>
+	<button type="button" value="1" title="Tails" id="tails" class="character"><span>Tails</span></button>
+	<button type="button" value="2" title="Knuckles" id="knuckles" class="character"><span>Knuckles</span></button>
+</div>
+<div id="section_lives" class="retro"><h3>Lives</h3>
+	<p><input type="number" min="1" max="99" value="3" id="lives"></p>
+</div>
+<div id="section_score" class="retro"><h3>Score</h3>
+	<p><input type="number" min="0" max="999999" value="0" id="score"></p>
+</div>
+<div id="section_stage"><h3>Current Round</h3>
+	<p><img src="images/stage-01-present.png" alt="[Stage]" id="stage"></p>
+	<p><select id="stages">
+		<option value="0">New Game</option>
+		<option value="1">Palmtree Panic</option>
+		<option value="2">Collision Chaos</option>
+		<option value="3">Tidal Tempest</option>
+		<option value="4">Quartz Quadrant</option>
+		<option value="5">Wacky Workbench</option>
+		<option value="6">Stardust Speedway</option>
+		<option value="7">Metallic Madness</option>
+	</select>
+	<select id="act" class="retro">
+		<option value="1">Zone I Present</option>
+		<option value="2">Zone I Past</option>
+		<option value="3">Zone I Good Future</option>
+		<option value="4">Zone I Bad Future</option>
+		<option value="5">Zone II Present</option>
+		<option value="6">Zone II Past</option>
+		<option value="7">Zone II Good Future</option>
+		<option value="8">Zone II Bad Future</option>
+		<option value="9">Zone III Good Future</option>
+		<option value="10">Zone III Bad Future</option>
+	</select></p>
+</div>
+<div id="section_goodFutures" class="cd pc"><h3>Good Futures Created</h3>
+	<p><button type="button" value="1" title="Palmtree Panic" id="palmtreePanic" class="bad future"><span>Palmtree Panic</span></button>
+	<button type="button" value="2" title="Collision Chaos" id="collisionChaos" class="bad future"><span>Collision Chaos</span></button>
+	<button type="button" value="4" title="Tidal Tempest" id="tidalTempest" class="bad future"><span>Tidal Tempest</span></button>
+	<button type="button" value="8" title="Quartz Quadrant" id="quartzQuadrant" class="bad future"><span>Quartz Quadrant</span></button><wbr>
+	<button type="button" value="16" title="Wacky Workbench" id="wackyWorkbench" class="bad future"><span>Wacky Workbench</span></button>
+	<button type="button" value="32" title="Stardust Speedway" id="stardustSpeedway" class="bad future"><span>Stardust Speedway</span></button>
+	<button type="button" value="64" title="Metallic Madness" id="metallicMadness" class="bad future"><span>Metallic Madness</span></button></p>
+</div>
+<div id="section_machines" class="retro"><h3>Machines Destroyed</h3>
+	<table>
+		<tr>
+			<th></th>
+			<th><img src="images/flower-01.png" title="Palmtree Panic" class="flower"></th>
+			<th><img src="images/flower-02.png" title="Collision Chaos" class="flower"></th>
+			<th><img src="images/flower-03.png" title="Tidal Tempest" class="flower"></th>
+			<th><img src="images/flower-04.png" title="Quartz Quadrant" class="flower"></th>
+			<th><img src="images/flower-05.png" title="Wacky Workbench" class="flower"></th>
+			<th><img src="images/flower-06.png" title="Stardust Speedway" class="flower"></th>
+			<th><img src="images/flower-07.png" title="Metallic Madness" class="flower"></th>
+		</tr>
+		<tr>
+			<th>I</th>
+			<td><button type="button" value="1" class="machine"><span>Palmtree Panic I</span></button></td>
+			<td><button type="button" value="4" class="machine"><span>Collision Chaos I</span></button></td>
+			<td><button type="button" value="16" class="machine"><span>Tidal Tempest I</span></button></td>
+			<td><button type="button" value="64" class="machine"><span>Quartz Quadrant I</span></button></td>
+			<td><button type="button" value="256" class="machine"><span>Wacky Workbench I</span></button></td>
+			<td><button type="button" value="1024" class="machine"><span>Stardust Speedway I</span></button></td>
+			<td><button type="button" value="4096" class="machine"><span>Metallic Madness I</span></button></td>
+		</tr>
+		<tr>
+			<th>II</th>
+			<td><button type="button" value="2" class="machine"><span>Palmtree Panic II</span></button></td>
+			<td><button type="button" value="8" class="machine"><span>Collision Chaos II</span></button></td>
+			<td><button type="button" value="32" class="machine"><span>Tidal Tempest II</span></button></td>
+			<td><button type="button" value="128" class="machine"><span>Quartz Quadrant II</span></button></td>
+			<td><button type="button" value="512" class="machine"><span>Wacky Workbench II</span></button></td>
+			<td><button type="button" value="2048" class="machine"><span>Stardust Speedway II</span></button></td>
+			<td><button type="button" value="8192" class="machine"><span>Metallic Madness II</span></button></td>
+		</tr>
+	</table>
+</div>
+<div id="section_holograms" class="retro"><h3>Holograms Destroyed</h3>
+	<p><input type="number" min="0" max="12" value="0" id="holograms"></p>
+</div>
+<div id="section_specialStage"><h3>Next Special Zone</h3>
+	<p><img src="images/specialstage-01.png" alt="[Special Zone]" id="specialStage"></p>
+	<p><select id="specialStages">
+		<option value="1">Special Zone 1</option>
+		<option value="2">Special Zone 2</option>
+		<option value="3">Special Zone 3</option>
+		<option value="4">Special Zone 4</option>
+		<option value="5">Special Zone 5</option>
+		<option value="6">Special Zone 6</option>
+		<option value="7">Special Zone 7</option>
+		<option value="0">Completed</option>
+	</select>
+	<label class="retro"><input type="checkbox" id="inSpecialStage"> Currently Playing</label></p>
+</div>
+<div id="section_timeStones"><h3>Time Stones Collected</h3>
+	<p><button type="button" value="1" title="Green Time Stone" id="green" class="empty timeStone"><span>Green</span></button>
+	<button type="button" value="2" title="Orange Time Stone" id="orange" class="empty timeStone"><span>Orange</span></button>
+	<button type="button" value="4" title="Yellow Time Stone" id="yellow" class="empty timeStone"><span>Yellow</span></button><br>
+	<button type="button" value="8" title="Blue Time Stone" id="blue" class="empty timeStone"><span>Blue</span></button>
+	<button type="button" value="16" title="Cyan Time Stone" id="cyan" class="empty timeStone"><span>Cyan</span></button>
+	<button type="button" value="32" title="Purple Time Stone" id="purple" class="empty timeStone"><span>Purple</span></button>
+	<button type="button" value="64" title="Red Time Stone" id="red" class="empty timeStone"><span>Red</span></button></p>
+</div></section>
+<section id="timeAttack"><h2>Time Attack</h2>
+<div class="slots"><label>Save slot: <select id="slot2">
+	<option value="0">Saved Game 1</option>
+	<option value="1">Saved Game 2</option>
+	<option value="2">Saved Game 3</option>
+	<option value="3">Saved Game 4</option>
+	<option value="4">Saved Game 5</option>
+	<option value="5">Saved Game 6</option>
+</select></label></div>
+<div id="section_unlocked"><h3>Stages Unlocked</h3>
+	<p><span id="showLevel" class="show"></span></p>
+	<p><input type="range" min="0" max="7" value="1" id="level"></p>
+</div>
+<div id="section_totalTime"><h3>Total Completion Time</h3>
+	<p><span id="totalMin">0</span> &prime; <span id="totalSec">00</span> &Prime; <span id="totalTick">00</span></p>
+</div>
+<div id="section_times"><h3>Best Times</h3>
+	<p><span id="showCurrentLevel" class="show"></span></p>
+	<p><input type="range" min="1" max="28" value="1" id="currentLevel"></p>
+	<table id="times">
+		<tr id="row0">
+			<th>1st:</th>
+			<td><input type="number" min="0" max="9" value="0" class="time min"> &prime;
+			<input type="number" min="0" max="59" value="0" class="time sec"> &Prime;
+			<select class="tick"><option>00</option><option>01</option><option>03</option><option>05</option><option>06</option><option>08</option><option>10</option><option>11</option><option>13</option><option>15</option><option>16</option><option>18</option><option>20</option><option>21</option><option>23</option><option>25</option><option>26</option><option>28</option><option>30</option><option>31</option><option>33</option><option>35</option><option>36</option><option>38</option><option>40</option><option>41</option><option>43</option><option>45</option><option>46</option><option>48</option><option>50</option><option>51</option><option>53</option><option>55</option><option>56</option><option>58</option><option>60</option><option>61</option><option>63</option><option>65</option><option>66</option><option>68</option><option>70</option><option>71</option><option>73</option><option>75</option><option>76</option><option>78</option><option>80</option><option>81</option><option>83</option><option>85</option><option>86</option><option>88</option><option>90</option><option>91</option><option>93</option><option>95</option><option>96</option><option>98</option></select>&nbsp;
+			<input type="text" size="3" maxlength="3" value="AAA" pattern="[ \w]*" class="cd pc initials"></td>
+		</tr>
+		<tr id="row1">
+			<th>2nd:</th>
+			<td><input type="number" min="0" max="9" value="0" class="time min"> &prime;
+			<input type="number" min="0" max="59" value="0" class="time sec"> &Prime;
+			<select class="tick"><option>00</option><option>01</option><option>03</option><option>05</option><option>06</option><option>08</option><option>10</option><option>11</option><option>13</option><option>15</option><option>16</option><option>18</option><option>20</option><option>21</option><option>23</option><option>25</option><option>26</option><option>28</option><option>30</option><option>31</option><option>33</option><option>35</option><option>36</option><option>38</option><option>40</option><option>41</option><option>43</option><option>45</option><option>46</option><option>48</option><option>50</option><option>51</option><option>53</option><option>55</option><option>56</option><option>58</option><option>60</option><option>61</option><option>63</option><option>65</option><option>66</option><option>68</option><option>70</option><option>71</option><option>73</option><option>75</option><option>76</option><option>78</option><option>80</option><option>81</option><option>83</option><option>85</option><option>86</option><option>88</option><option>90</option><option>91</option><option>93</option><option>95</option><option>96</option><option>98</option></select>&nbsp;
+			<input type="text" size="3" maxlength="3" value="AAA" pattern="[ \w]*" class="cd pc initials"></td>
+		</tr>
+		<tr id="row2">
+			<th>3rd:</th>
+			<td><input type="number" min="0" max="9" value="0" class="time min"> &prime;
+			<input type="number" min="0" max="59" value="0" class="time sec"> &Prime;
+			<select class="tick"><option>00</option><option>01</option><option>03</option><option>05</option><option>06</option><option>08</option><option>10</option><option>11</option><option>13</option><option>15</option><option>16</option><option>18</option><option>20</option><option>21</option><option>23</option><option>25</option><option>26</option><option>28</option><option>30</option><option>31</option><option>33</option><option>35</option><option>36</option><option>38</option><option>40</option><option>41</option><option>43</option><option>45</option><option>46</option><option>48</option><option>50</option><option>51</option><option>53</option><option>55</option><option>56</option><option>58</option><option>60</option><option>61</option><option>63</option><option>65</option><option>66</option><option>68</option><option>70</option><option>71</option><option>73</option><option>75</option><option>76</option><option>78</option><option>80</option><option>81</option><option>83</option><option>85</option><option>86</option><option>88</option><option>90</option><option>91</option><option>93</option><option>95</option><option>96</option><option>98</option></select>&nbsp;
+			<input type="text" size="3" maxlength="3" value="AAA" pattern="[ \w]*" class="cd pc initials"></td>
+		</tr>
+	</table>
+</div>
+<div id="section_initials" class="cd"><h3>Default Initials</h3>
+	<p><input type="text" size="3" maxlength="3" value="YOU" pattern="[ \w]*" id="defaultInitials" class="cd initials"></p>
+</div></section>
+<section id="options" class="retro"><h2>Options</h2>
+<div id="section_mobile">
+	<p><label><input type="checkbox" id="mobile"> Mobile Version</label></p>
+</div>
+<div id="section_soundtrack"><h3>Soundtrack</h3>
+	<p>
+		<button type="button" value="0" title="Japan" id="cdjp" class="soundtrack active">Japan</button>
+		<button type="button" value="1" title="U.S.A." id="cdus" class="soundtrack">U.S.A.</button>
+	</p></div>
+<div id="section_spinDash"><h3>Spin Dash</h3>
+	<p>
+		<button type="button" value="1" title="Sonic CD" id="original" class="spinDash">Sonic CD</button>
+		<button type="button" value="0" title="Sonic 2" id="genesis" class="spinDash active">Sonic 2</button>
+	</p></div>
+<div id="section_tails"><h3>Tails</h3>
+	<p>
+		<button type="button" value="0" title="Locked" id="locked" class="tails active">Locked</button>
+		<button type="button" value="1" title="Unlocked" id="unlocked" class="tails">Unlocked</button>
+	</p>
+</div>
+<div id="section_videoFilter"><h3>Video Filter</h3>
+	<p><span id="showVideoFilter" class="show"></span></p>
+	<p><input type="range" min="0" max="2" value="0" id="videoFilter"></p>
+</div>
+<div id="section_musicVolume"><h3>Music Volume</h3>
+	<p><span id="showMusicVolume" class="show"></span></p>
+	<p><input type="range" min="0" max="9" value="9" id="musicVolume" class="volume"></p>
+</div>
+<div id="section_soundVolume"><h3>Sound Volume</h3>
+	<p><span id="showSoundVolume" class="show"></span></p>
+	<p><input type="range" min="0" max="9" value="9" id="soundVolume" class="volume"></p>
+</div></section>
+<section id="save"><h2>Save Game</h2>
+<div>
+	<button type="button" title="Save" id="download">Save</button>
+	<button type="button" title="Reset" id="reset">Reset</button>
+</div>
+<div><a id="link">Download</a></div></section>
+<div id="hexview" class="overlay"><div><div id="col"></div><div id="hex"></div><div id="asc"></div></div>
+<p><button type="button" class="close"><img src="layout/close.svg" alt="[Close]" title="Close"></button></p></div>
+<div id="error" class="overlay"><div><img src="images/eggman.png" alt="Error" id="eggman"></div>
+<p>An unknown error has occurred.</p>
+<p><button type="button" class="close"><img src="layout/close.svg" alt="[Close]" title="Close"></button></p></div></main>
+<footer>Created by <a href="mailto:jcfields@jcfields.dev">J.C. Fields</a>. Hosted by <a href="https://github.com/jcfieldsdev/sonic-cd-save-editor">GitHub</a>.</footer></body></html>
